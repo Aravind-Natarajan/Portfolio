@@ -1,0 +1,199 @@
+/* Main section styling */
+.work-section {
+  width: 100%;
+  padding: 20px;
+  background-color: #000000;
+  text-align: center;
+}
+
+.work-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  cursor: pointer;
+  animation: fadeIn 1s ease-out;
+}
+
+.work-title::before,
+.work-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease;
+}
+
+.work-title::before {
+  left: 50%;
+}
+
+.work-title::after {
+  right: 50%;
+}
+
+.work-title:hover::before,
+.work-title:hover::after {
+  width: 50%;
+}
+
+.work-title:hover {
+  color: steelblue;
+}
+
+/* Timeline container using grid */
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+  justify-items: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Individual timeline item styling */
+.timeline-item {
+  width: 100%;
+}
+
+.timeline-content {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8em;
+  animation: slideUp 1.5s ease-out;
+  position: relative;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  color: steelblue;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.responsibilities {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: 0.9rem;
+  color: #818181;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0px 0px 10px rgb(63, 99, 129);
+}
+
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styling */
+
+/* Tablet and Mobile View */
+@media (max-width: 768px) {
+  .work-title {
+    font-size: 2.2rem;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr; /* 1 column layout for tablets */
+  }
+
+  .timeline-content {
+    width: 100%; /* Ensure 90% width for mobile/tablet */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+  }
+
+  .role {
+    font-size: 0.95rem;
+  }
+
+  .date {
+    font-size: 0.85rem;
+  }
+
+  .timeline-content .responsibilities {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-title {
+    font-size: 1.8rem;
+  }
+
+  .timeline {
+  
+    grid-template-columns: 1fr; /* 1 column layout for mobile */
+  }
+
+  .timeline-content {
+    width: 100%; /* 90% width for mobile */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .role {
+    font-size: 0.9rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+
+  .timeline-content .responsibilities {
+    font-size: 0.75rem; /* Smaller font size for list items */
+  }
+}

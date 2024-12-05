@@ -1,0 +1,92 @@
+/* General styling for the bubble container */
+.bubble-container {
+  position: fixed; /* Fix to the bottom of the screen */
+  bottom: 0; /* Align to the bottom */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Bubbles don't interfere with user interaction */
+  overflow: hidden; /* Prevents overflow outside the container */
+  z-index: 10;
+}
+
+/* Styling for individual bubbles */
+.bubble {
+  position: absolute;
+  bottom: -50px; /* Start just below the visible area */
+  width: 7px;
+  height: 7px;
+  background-color: steelblue;
+  border-radius: 50%;
+  animation: moveUp 5s infinite; /* Animate bubble upwards */
+  opacity: 1; /* Slight transparency for a soft look */
+}
+
+/* Randomize each bubble's animation properties */
+.bubble:nth-child(1) {
+  left: 10%;
+  animation-duration: 6s;
+  animation-delay: 0s;
+}
+.bubble:nth-child(2) {
+  left: 20%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+.bubble:nth-child(3) {
+  left: 30%;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+.bubble:nth-child(4) {
+  left: 40%;
+  animation-duration: 6.5s;
+  animation-delay: 3s;
+}
+.bubble:nth-child(5) {
+  left: 50%;
+  animation-duration: 8s;
+  animation-delay: 4s;
+}
+.bubble:nth-child(6) {
+  left: 60%;
+  animation-duration: 7s;
+  animation-delay: 2.5s;
+}
+.bubble:nth-child(7) {
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 1.5s;
+}
+.bubble:nth-child(8) {
+  left: 80%;
+  animation-duration: 6.2s;
+  animation-delay: 0.5s;
+}
+.bubble:nth-child(9) {
+  left: 90%;
+  animation-duration: 7.5s;
+  animation-delay: 2s;
+}
+.bubble:nth-child(10) {
+  left: 60%;
+  animation-duration: 5s;
+  animation-delay: 3s;
+}
+.bubble:nth-child(11) {
+  left: 75%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+/* Keyframes to animate the bubbles from bottom to top */
+@keyframes moveUp {
+  0% {
+    transform: translateY(0); /* Start from the bottom */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh); /* Move up off the screen */
+    opacity: 0; /* Fade out as it moves */
+  }
+}

@@ -1,0 +1,341 @@
+
+.wave-container {
+    box-shadow: 0 0 10px black,0 0 30px black,0 0 60px black;
+    position: relative;
+    width: 100%;
+    height: 30vh; 
+    overflow: hidden;
+    background-color: #000000; /* Dark background color for the sea */
+  }
+  
+  /* Individual waves with animation */
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 150%;
+    height: 150px;
+    background-color: steelblue;
+    border-radius: 50%;
+    animation: waveAnimation 10s ease-in-out infinite;
+    opacity: 0.6;
+  }
+  
+  /* Layer 1: Slowest, largest waves */
+  .wave1 {
+    animation-duration: 12s;
+    background-color: steelblue;
+    opacity: 0.8;
+    height: 160px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Layer 2: Medium speed, medium size waves */
+  .wave2 {
+    animation-duration: 10s;
+    background-color: #4f6d7a; /* Lighter shade of blue */
+    opacity: 0.7;
+    height: 140px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Layer 3: Faster and smaller waves */
+  .wave3 {
+    animation-duration: 8s;
+    background-color: #5c8a8d; /* Another shade of blue-green */
+    opacity: 0.6;
+    height: 120px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Layer 4: Smallest, fastest waves */
+  .wave4 {
+    animation-duration: 6s;
+    background-color: #3a4c60; /* Darker blue-gray */
+    opacity: 0.5;
+    height: 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Layer 5: Additional small waves to create more texture */
+  .wave5 {
+    animation-duration: 4s;
+    background-color: #6a7f7e; /* A lighter, softer shade */
+    opacity: 0.3;
+    height: 80px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animation keyframes for wave motion */
+  @keyframes waveAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive adjustments */
+  
+  /* Desktop and Laptop (Large Screens) */
+  @media (min-width: 1024px) {
+    .wave-container {
+      height: 30vh; /* Full screen height */
+    }
+  
+    .wave {
+      height: 150px; /* Standard wave height for desktop */
+    }
+  }
+  
+  /* Tablet View (768px - 1024px) */
+  @media (max-width: 1024px) {
+    .wave-container {
+      box-shadow: 0 0 10px black,0 0 30px black,0 0 60px black;
+      height: 30vh; /* Reduce the height for tablet */
+    }
+  
+    .wave {
+      height: 120px; /* Smaller wave height for tablet */
+    }
+  }
+  
+  /* Mobile View (480px - 767px) */
+  @media (max-width: 767px) {
+    .wave-container {
+      height: 30vh; /* Further reduce for mobile screens */
+    }
+  
+    .wave {
+      height: 100px; /* Smaller waves for mobile */
+    }
+  }
+  
+  /* Small Mobile View (320px - 479px) */
+  @media (max-width: 479px) {
+    .wave-container {
+      height: 30vh; /* Even smaller container for very small screens */
+    }
+  
+    .wave {
+      height: 80px; /* Smaller waves for very small mobile screens */
+    }
+  }                     
+  /* SOCIAL ICON STYLES */
+.social-login-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    -webkit-box-reflect: below 5px linear-gradient(transparent, #00000055);
+  }
+  .social-login-icons svg {
+    width: 40px;
+  }
+  
+  .social-icon-1,
+  .social-icon-1-1,
+  .social-icon-2,
+  .social-icon-2-2,
+  .social-icon-3,
+  .social-icon-3-3,
+  .social-icon-4,
+  .social-icon-4-4 {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin: 20px 0 0px 0;
+  }
+  
+  .icon svg {
+    fill: steelblue;
+  }
+  
+  .socialcontainer {
+    height: 80px;
+    overflow: hidden;
+  }
+  .social-icon-1 {
+    transition-duration: 0.4s;
+    background-color: rgb(0, 119, 181);
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  }
+  .social-icon-1 svg,
+  .social-icon-2 svg,
+  .social-icon-3 svg,
+  .social-icon-4 svg {
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+  }
+  .social-icon-1-1 {
+    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 0, 0);
+  }
+  .socialcontainer:hover .social-icon-1 {
+    transform: translateY(-70px);
+  }
+  .socialcontainer:hover .social-icon-1 svg,
+  .socialcontainer:hover .social-icon-2 svg,
+  .socialcontainer:hover .social-icon-3 svg,
+  .socialcontainer:hover .social-icon-4 svg {
+    opacity: 1;
+  }
+  .social-icon-2 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+    background: linear-gradient(
+      72.44deg,
+      #ff7a00 11.92%,
+      #ff0169 51.56%,
+      #d300c5 85.69%
+    );
+  }
+  .socialcontainer:hover .social-icon-2 {
+    transform: translateY(-70px);
+  }
+  .social-icon-3 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+    background:#25D366;
+  }
+  
+  .socialcontainer:hover .social-icon-3 {
+    transform: translateY(-70px);
+  }
+  .social-icon-4 {
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
+  
+    background: linear-gradient(
+        180deg,
+        rgba(129, 34, 144, 1) 0%,
+        rgba(77, 34, 124, 1) 91%
+      );
+  }
+  
+  .socialcontainer:hover .social-icon-4 {
+    transform: translateY(-70px);
+  }
+
+  .copyright-section {
+   
+    background-color: #000000;
+    text-align: center;
+    font-size: 14px;
+    padding: 0.5em 0;
+}
+
+.copyright-section p {
+   
+    margin: 0;
+    color: steelblue;
+}
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 768px) {
+ 
+  
+
+  .copyright-section {
+ 
+      font-size: 12px; /* Smaller text on tablets */
+  }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+  
+  .copyright-section {
+      font-size: 12px; /* Smaller text on phones */
+  }
+
+  .copyright-section p {
+   
+      color: #ddd; /* Slightly lighter color for small screens */
+  }
+}
+
+
+/* up-arrow */
+/* Default positioning for the button (Desktop and larger devices) */
+.up-arrow {
+  margin-bottom: 40px;
+  position: fixed;
+  bottom: 20px;   /* Adjust the vertical position from the bottom */
+  right: 20px;    /* Adjust the horizontal position from the right */
+  z-index: 1000;  /* Ensures it's above other content */
+}
+
+/* Style the scroll button */
+.scroll-btn {
+  background-color: #007bff;  /* Blue color for the button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 24px;  /* Arrow size */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.scroll-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Animation for continuous up-down motion */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);  /* Starting position */
+  }
+  50% {
+    transform: translateY(-10px);  /* Moves up */
+  }
+  100% {
+    transform: translateY(0);  /* Moves back to starting position */
+  }
+}
+
+/* Apply the bounce animation */
+.scroll-btn {
+  animation: bounce 1s ease-in-out infinite; /* 1s duration, ease-in-out, and infinite loop */
+}
+
+/* Media Query for Tablet Devices (screens smaller than 1024px) */
+@media (max-width: 1024px) {
+  .up-arrow {
+    bottom: 20px;  /* Keep the button a bit away from the bottom */
+    right: 15px;   /* Slightly adjust right position for tablet */
+  }
+
+  .scroll-btn {
+    font-size: 20px;  /* Slightly smaller button size for tablets */
+    padding: 8px 12px;  /* Adjust button padding */
+  }
+}
+
+/* Media Query for Mobile Devices (screens smaller than 768px) */
+@media (max-width: 768px) {
+  .up-arrow {
+    bottom: 15px;  /* Adjust position for smaller screens */
+    right: 10px;   /* Keep it well within the screen */
+  }
+
+  .scroll-btn {
+    font-size: 18px;  /* Smaller icon size for mobile */
+    padding: 6px 10px;  /* Smaller padding for mobile */
+  }
+}
+

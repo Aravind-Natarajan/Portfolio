@@ -1,0 +1,181 @@
+/* General styling for the About section */
+.about-section {
+  background-color: #000;
+  color: white;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ 
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: flex;
+  column-gap:13px ;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fade-in 1s ease-in-out;
+  cursor: pointer;
+
+}
+
+.about-title span {
+  color: white;
+}
+
+.about-title .me {
+  color: steelblue;
+}
+.about-para .me {
+  color: steelblue;
+  font-weight: 500;
+}
+
+.about-title::before,
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255); /* Color of the border */
+  transition: width 0.3s ease;
+}
+
+.about-title::before {
+  left: 0;
+}
+
+.about-title::after {
+  right: 0;
+}
+
+.about-title:hover::before,
+.about-title:hover::after {
+  width: 60%; /* This will extend the borders to the left and right */
+}
+
+.content-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  max-width: 1200px;
+  animation: fade-in 1s ease-in-out;
+}
+
+.about-para {
+  flex: 1;
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  max-width: 600px;
+  animation: slide-up 1s ease-out;
+  text-indent: 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 500px;
+  height: 500px;
+  /* border-radius: 50%; */
+  transition: transform 0.3s ease, border-radius 0.3s ease,filter 0.3s ease;
+  object-fit: cover;
+}
+
+.profile-image img:hover {
+  transform: scale(1.1);
+  /* border-radius: 10%; */
+  filter: drop-shadow(0 0 10px  rgb(84, 134, 175));
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-para {
+    font-size: 1rem;
+  }
+
+  .profile-image img {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-para {
+    font-size: 0.95rem;
+  }
+
+  .profile-image img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .content-about {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-para {
+    font-size: 0.9rem;
+  }
+
+  .profile-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .content-about {
+    padding: 20px;
+  }
+}

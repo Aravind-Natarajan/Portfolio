@@ -1,0 +1,192 @@
+/* General styling */
+.home-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Optional background for better contrast */
+  /* z-index: 11; */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; /* Adjust the opacity to make it less prominent */
+}
+
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 50px; /* Adds space between text and image */
+}
+
+.name-role {
+  margin: 0;
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: slide-up 1s ease-out;
+  text-align: left;
+  z-index: -1;
+}
+
+.home-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-top: 20px;
+  animation: zoom-in 1s ease-out;
+}
+.resume{
+  margin-top: 2rem;
+  /* z-index: -1; */
+}
+.resume button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resume button:hover {
+  background-color: #0056b3;
+  z-index: 1;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+
+/* For tablet screens */
+@media (max-width: 1024px) {
+  .home-text .name-role {
+    font-size: 6rem; /* Slightly smaller font size for tablets */
+  }
+
+  .home-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .resume button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+  }
+
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-text {
+    margin-right: 0;
+    margin-bottom: 30px; /* Adds space between text and image */
+  }
+}
+
+/* For mobile screens (phones) */
+@media (max-width: 768px) {
+  .home-text .name-role {
+    font-size: 3.5rem; /* Adjust font size for smaller tablets/large phones */
+  }
+
+  .home-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .resume button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
+  .home-text .name-role {
+    font-size: 2.5rem; /* Even smaller font size for mobile phones */
+  }
+
+  .home-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .resume button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .home-content {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .home-text {
+    margin-bottom: 20px;
+  }
+}

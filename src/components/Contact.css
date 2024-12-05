@@ -1,0 +1,228 @@
+/* Base styles for large screens (desktop and laptops) */
+.contact-main {
+    background-color: black;
+    text-align: center;
+  }
+  
+  .contact-section {
+    background-image: url('../assets/contact1.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .contact-title {
+    margin-top: 3.2rem;
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .contact-title::before,
+  .contact-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .contact-title::before {
+    left: 50%;
+  }
+  
+  .contact-title::after {
+    right: 50%;
+  }
+  
+  .contact-title:hover::before,
+  .contact-title:hover::after {
+    width: 50%;
+  }
+  
+  .contact-title:hover {
+    color: steelblue;
+  }
+  
+  .container {
+    padding: 40px;
+    border-radius: 10px;
+    /* background-color: rgb(41, 41, 41); */
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: slideIn 1s ease-out;
+    transition: all 1s;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
+  input, textarea {
+    padding: 12px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    /* background-color: transparent; */
+    color: #000000;
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    /* border-color: #000000; */
+    box-shadow: 0 0 8px #fff;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  /* input::placeholder,
+  textarea::placeholder{
+    color: #000;
+  } */
+  
+  button[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #034d9c;
+  }
+  
+  .mes {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* --- Media Queries for responsiveness --- */
+  
+  /* Tablet: 768px - 1024px */
+  @media (max-width: 1024px) {
+    .contact-title {
+      font-size: 2.5rem;
+    }
+  
+    .container {
+      padding: 30px;
+      max-width: 450px;
+    }
+  
+    input, textarea {
+      font-size: 0.9rem;
+    }
+  
+    button[type="submit"] {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .mes {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile: 480px - 767px */
+  @media (max-width: 767px) {
+    .contact-title {
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+  
+    .container {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    form {
+      row-gap: 8px;
+    }
+  
+    input, textarea {
+      font-size: 0.85rem;
+      padding: 10px;
+    }
+  
+    button[type="submit"] {
+      font-size: 0.85rem;
+      padding: 10px;
+    }
+  
+    .mes {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile (small devices): 320px - 479px */
+  @media (max-width: 479px) {
+    .contact-title {
+      font-size: 1.8rem;
+    }
+  
+    .container {
+      padding: 15px;
+      max-width: 90%;
+    }
+  
+    input, textarea {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  
+    button[type="submit"] {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  
+    .mes {
+      font-size: 0.9rem;
+    }
+  }
+  
